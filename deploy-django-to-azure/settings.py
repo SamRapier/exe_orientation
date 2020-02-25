@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_azure_demo.wsgi.application'
+WSGI_APPLICATION = 'deploy-django-to-azure.wsgi.application'
 
 
 # Database
