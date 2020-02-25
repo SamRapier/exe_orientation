@@ -39,7 +39,9 @@ def redirect(request):
             print("groupcodes matched")
             request.session['groupcode'] = groupcode
             print("session request successful")
-            return render(request, 'app/studentview.html.',{"groupcode":groupcode, "data":info,"id":id})
+            return render(request, 'app/studentview.html.',{"groupcode":groupcode, "data":info})
+
+            
         else:
             print("Wrong")
             messages.error(request, 'The game code does not exist')
