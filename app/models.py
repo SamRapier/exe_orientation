@@ -11,9 +11,6 @@ class Gamecode(models.Model):
      def __str__(self):     #convert objects in to strings
          return self.groupcode
 
-
-
-
 #Below table is for testing
 class Musician(models.Model):
     first_name = models.CharField(max_length=50)

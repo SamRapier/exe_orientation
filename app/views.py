@@ -1,4 +1,4 @@
-# author : Hao
+# author : Hao, Sam
 
 
 from __future__ import unicode_literals
