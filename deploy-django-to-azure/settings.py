@@ -74,16 +74,20 @@ WSGI_APPLICATION = 'django_azure_demo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'db_exeter_orientation',
-#         'USER': 'user-admin',
-#         'PASSWORD': 'v%mRn3os#9P2JnjnV*dJ',
-#         'HOST': 'db-exeter-orientation.database.windows.net',
-#         'PORT': '1433',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'DB-exeterOrientation',
+        'USER': 'user-admin',
+        'PASSWORD': 'v%mRn3os#9P2JnjnV*dJ',
+        'HOST': 'db-exeter-orientation.database.windows.net',
+        'PORT': '1433',
+		'OPTIONS': {
+             'driver': 'ODBC Driver 13 for SQL Server',
+             'MARS_Connection': 'True',
+         }
+    }
+}
 
 
 # Password validation
