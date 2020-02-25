@@ -24,8 +24,10 @@ def redirect(request):
         print("recieved post and submit-groupcode")
         print(request.POST)
         groupcode = str(request.POST.get('groupCode'))
+        print(groupcode)
         print(Gamecode.objects.all())
         info = Questions.objects.filter(auto_increment_id=num)
+        print(info)
         if Gamecode.objects.filter(groupcode=groupcode).exists():
             request.session['groupcode'] = groupcode
             return render(request, 'app/studentview.html.',{"groupcode":groupcode, "data":info,"id":id})

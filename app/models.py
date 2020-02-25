@@ -6,10 +6,10 @@ from django.db import models
 
 #Used for the game
 class Gamecode(models.Model):
-     groupcode = models.CharField(max_length=250)
+    groupcode = models.CharField(max_length=250)
 
-     def __str__(self):     #convert objects in to strings
-         return self.groupcode
+    def __str__(self):     #convert objects in to strings
+        return self.groupcode
 
 #Below table is for testing
 class Musician(models.Model):
