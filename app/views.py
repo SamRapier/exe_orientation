@@ -22,6 +22,7 @@ def redirect(request):
     print("We have arrived")	
     if request.method == 'POST' and 'submit-groupcode' in request.POST:
         print("recieved post and submit-groupcode")
+        print(request.POST)
         groupcode = str(request.POST.get('groupCode'))
         print(Gamecode.objects.all())
         info = Questions.objects.filter(auto_increment_id=num)
