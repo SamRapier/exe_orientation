@@ -55,7 +55,7 @@ ROOT_URLCONF = 'deploy-django-to-azure.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'app', 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+STATIC_ROOT = "/home/site/wwwroot/static/"
 
 # STATICFILES_DIRS = (
 #                     os.path.join(BASE_DIR, "app", "static"),
