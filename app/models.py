@@ -28,4 +28,4 @@ class Questions(models.Model):
     auto_increment_id = models.AutoField(primary_key=True)
     questions = models.CharField(max_length=100)
     answers = models.CharField(max_length=100)
-    node_nums = models.IntegerField()
+    node_num = models.IntegerField()

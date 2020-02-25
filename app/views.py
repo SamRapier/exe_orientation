@@ -25,8 +25,11 @@ def redirect(request):
         print(request.POST)
         groupcode = str(request.POST.get('groupCode'))
         print(groupcode)
-        # print(Gamecode.objects.all())
+        print(Gamecode.objects.all())
         print("apparently that did work")
+
+        print(Questions)
+        print(Questions.objects.all())
         info = Questions.objects.filter(node_num=num)
         print(info)
         print("info got")
@@ -60,6 +63,7 @@ def redirect(request):
             messages.error(request, 'That is the wrong answer, please try again')
             return render(request, 'app/studentview.html.', {"groupcode": groupcode, "data": info, "id": id})
     print(request.method)
+    return HttpResponse()
 
 
 def handler404(request):
