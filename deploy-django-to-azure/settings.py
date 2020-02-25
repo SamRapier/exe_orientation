@@ -122,9 +122,9 @@ STATIC_URL = '/static-files/'
 
 STATIC_ROOT = "https://exeblobstorage.blob.core.windows.net/"
 
-# STATICFILES_DIRS = (
-#                     os.path.join(BASE_DIR, "app", "static"),
-#                     )
+STATICFILES_DIRS = (
+                    "https://exeblobstorage.blob.core.windows.net/static-files",
+                    )
 
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
