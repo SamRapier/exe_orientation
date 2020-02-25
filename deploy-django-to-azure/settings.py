@@ -118,13 +118,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static-files/'
+STATIC_URL = 'https://exeblobstorage.blob.core.windows.net/static-files'
 
-STATIC_ROOT = "https://exeblobstorage.blob.core.windows.net/"
+# STATIC_ROOT = "https://exeblobstorage.blob.core.windows.net/"
 
-STATICFILES_DIRS = (
-                    "https://exeblobstorage.blob.core.windows.net/",
-                    )
+# STATICFILES_DIRS = (
+#                     "https://exeblobstorage.blob.core.windows.net/",
+#                     )
 
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
