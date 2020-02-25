@@ -61,4 +61,4 @@ def MVP_treasure_hunt(request):
 	return render(request, 'app/MVP_treasure_hunt.html')
 
 def studentview(request):
-    return render(request,'studentview.html')
+    return render(request,'app/studentview.html')
