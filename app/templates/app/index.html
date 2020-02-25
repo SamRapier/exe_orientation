@@ -44,11 +44,11 @@
 		</div>
         <div class="one-half column">
 		  <h5 class="exampleOne-heading">Play Treasure Hunt</h5>
-		  <form action="redirect" method = "post">
+		  <form action="/redirect" method = "post">
               {% csrf_token %}
 			  <input type="text" name="groupCode" placeholder="Enter Code">
-        <br>
-			  <input type="submit" value="Join Group" name = 'submit-groupcode'>
+        	  <br>
+			  <input type="submit" value="Join Group" name='submit-groupcode'>
               {%if messages%}
                 {% for message in messages %}
                     <div class="alert alert-danger" role="alert">
