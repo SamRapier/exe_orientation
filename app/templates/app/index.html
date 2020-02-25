@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <title>Exe Orientation</title>
   <meta name="description" content="">
-  <meta name="author" content="Sam, Niklas">
+  <meta name="author" content="Sam, Niklas, Hao">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -20,13 +20,14 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="{% static 'css/skeleton.css' %}"></link>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/custom.css' %}"></link>
-  
+  <link rel="stylesheet" href="{% static 'css/skeleton.css' %}"></link>
+
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
+
 
 
 </head>
@@ -38,16 +39,27 @@
     <div class="container">
       <div class="row">
 		<div class="one-half column">
-			<img class="u-full-width" src="{% static 'images/uniExeter.svg' %}">
+			<img class="u-full-width" src="{% static '/images/uniExeter.svg' %}">
 			<h4 class="exampleOne-heading">Get to know University of Exeter.</h4>
 		</div>
         <div class="one-half column">
 		  <h5 class="exampleOne-heading">Play Treasure Hunt</h5>
-		  <form action="/MVP_treasure_hunt">
+		  <form action="redirect" method = "post">
+              {% csrf_token %}
 			  <input type="text" name="groupCode" placeholder="Enter Code">
         <br>
-			  <input type="submit" value="Join Group">
+			  <input type="submit" value="Join Group" name = 'submit-groupcode'>
+              {%if messages%}
+                {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor%}
+            {% endif %}
+
 		  </form>
+
+
         </div>
       </div>
     </div>
