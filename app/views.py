@@ -25,11 +25,13 @@ def redirect(request):
         print(request.POST)
         groupcode = str(request.POST.get('groupCode'))
         print(groupcode)
-        print(Gamecode.objects.all())
+        # print(Gamecode.objects.all())
         print("apparently that did work")
         info = Questions.objects.filter(node_num=num)
         print(info)
         print("info got")
+
+
         if Gamecode.objects.filter(groupcode=groupcode).exists():
             print("groupcodes matched")
             request.session['groupcode'] = groupcode
