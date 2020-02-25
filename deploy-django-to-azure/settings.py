@@ -123,7 +123,7 @@ STATIC_URL = '/static-files/'
 STATIC_ROOT = "https://exeblobstorage.blob.core.windows.net/"
 
 STATICFILES_DIRS = (
-                    "https://exeblobstorage.blob.core.windows.net/static-files",
+                    "https://exeblobstorage.blob.core.windows.net/",
                     )
 
 
