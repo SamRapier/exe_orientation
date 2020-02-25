@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "/home/site/wwwroot/static/"
+STATIC_ROOT = "https://exeblobstorage.blob.core.windows.net/static-files"
 
 # STATICFILES_DIRS = (
 #                     os.path.join(BASE_DIR, "app", "static"),
