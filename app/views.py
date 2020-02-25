@@ -46,20 +46,24 @@ def redirect(request):
             print("Wrong")
             messages.error(request, 'The game code does not exist')
             return render(request, 'app/index.html')
+
     if request.method == 'POST' and 'submit-question' in request.POST:
         groupcode = request.session['groupcode']
         data = str(request.POST.get('answer'))
+
         if Questions.objects.filter(answers=data, node_num=int(num)).exists():
             num += 1
             if Questions.objects.filter(node_num=int(num)).exists():
              info = Questions.objects.filter(node_num=num)
              messages.success(request, 'Correct!')
              return render(request, 'app/studentview.html.',{"groupcode":groupcode,"data":info,"id":id})
+
             else:
                 num -=1
                 info = Questions.objects.filter(node_num=num)
                 messages.success(request, 'You have finished the quiz, well done!')
                 return render(request, 'app/studentview.html.', {"groupcode": groupcode, "data": info, "id": id})
+                
         else:
             info = Questions.objects.filter(node_num=num)
             messages.error(request, 'That is the wrong answer, please try again')
