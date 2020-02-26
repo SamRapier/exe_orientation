@@ -39,7 +39,7 @@ def redirect(request):
             request.session['groupcode'] = groupcode
             print("session request successful")
             print(id)
-            return render(request, 'app/studentview.html.',{"groupcode":groupcode, "data":info, "id":id})
+            return render(request, 'app/studentview.html',{"groupcode":groupcode, "data":info, "id":id})
 
 
         else:
@@ -56,18 +56,18 @@ def redirect(request):
             if Questions.objects.filter(node_num=int(num)).exists():
              info = Questions.objects.filter(node_num=num)
              messages.success(request, 'Correct!')
-             return render(request, 'app/studentview.html.',{"groupcode":groupcode,"data":info,"id":id})
+             return render(request, 'app/studentview.html',{"groupcode":groupcode,"data":info,"id":id})
 
             else:
                 num -=1
                 info = Questions.objects.filter(node_num=num)
                 messages.success(request, 'You have finished the quiz, well done!')
-                return render(request, 'app/studentview.html.', {"groupcode": groupcode, "data": info, "id": id})
+                return render(request, 'app/studentview.html', {"groupcode": groupcode, "data": info, "id": id})
                 
         else:
             info = Questions.objects.filter(node_num=num)
             messages.error(request, 'That is the wrong answer, please try again')
-            return render(request, 'app/studentview.html.', {"groupcode": groupcode, "data": info, "id": id})
+            return render(request, 'app/studentview.html', {"groupcode": groupcode, "data": info, "id": id})
     print(request.method)
     return HttpResponse()
 
